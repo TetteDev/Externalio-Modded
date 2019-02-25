@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2BC975B3-4950-416B-A5C3-7A5F18FB17FB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Externalio</RootNamespace>
+    <AssemblyName>Greenshot</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GameOverlay, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GameOverlay.Net.4.0.1\lib\GameOverlay.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="SharpDX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.4.2.0\lib\net45\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct2D1, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.Direct2D1.4.2.0\lib\net45\SharpDX.Direct2D1.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\Aimbot.cs" />
+    <Compile Include="Features\AutoPistol.cs" />
+    <Compile Include="Features\Bunnyhop.cs" />
+    <Compile Include="Features\Chams.cs" />
+    <Compile Include="Features\FOVChanger.cs" />
+    <Compile Include="Features\Glow.cs" />
+    <Compile Include="Features\No_Flash.cs" />
+    <Compile Include="Features\Radar.cs" />
+    <Compile Include="Features\SkinChanger.cs" />
+    <Compile Include="Features\StandaloneRCS.cs" />
+    <Compile Include="ini-Parser\Exceptions\ParsingException.cs" />
+    <Compile Include="ini-Parser\FileIniDataParser.cs" />
+    <Compile Include="ini-Parser\Helpers\Assert.cs" />
+    <Compile Include="ini-Parser\Model\Configuration\ConcatenateDuplicatedKeysIniParserConfiguration.cs" />
+    <Compile Include="ini-Parser\Model\Configuration\DefaultIniParserConfiguration.cs" />
+    <Compile Include="ini-Parser\Model\Configuration\IniParserConfiguration.cs" />
+    <Compile Include="ini-Parser\Model\Formatting\DefaultIniDataFormatter.cs" />
+    <Compile Include="ini-Parser\Model\Formatting\IIniDataFormatter.cs" />
+    <Compile Include="ini-Parser\Model\IniData.cs" />
+    <Compile Include="ini-Parser\Model\IniDataCaseInsensitive.cs" />
+    <Compile Include="ini-Parser\Model\KeyData.cs" />
+    <Compile Include="ini-Parser\Model\KeyDataCollection.cs" />
+    <Compile Include="ini-Parser\Model\SectionData.cs" />
+    <Compile Include="ini-Parser\Model\SectionDataCollection.cs" />
+    <Compile Include="ini-Parser\Parser\ConcatenateDuplicatedKeysIniDataParser.cs" />
+    <Compile Include="ini-Parser\Parser\IniDataParser.cs" />
+    <Compile Include="ini-Parser\StreamIniDataParser.cs" />
+    <Compile Include="ini-Parser\StringIniParser.cs" />
+    <Compile Include="Managers\Config.cs" />
+    <Compile Include="Managers\MemoryManager.cs" />
+    <Compile Include="Managers\Watcher.cs" />
+    <Compile Include="Other\Checks.cs" />
+    <Compile Include="Other\Extensions.cs" />
+    <Compile Include="Other\Globals.cs" />
+    <Compile Include="Other\IESP.cs" />
+    <Compile Include="Other\Math.cs" />
+    <Compile Include="Other\Misc.cs" />
+    <Compile Include="Other\Settings.cs" />
+    <Compile Include="Other\ESPOverlay.cs" />
+    <Compile Include="Other\VectorExtension.cs" />
+    <Compile Include="Windoof\Keyboard.cs" />
+    <Compile Include="Managers\StringExtensions.cs" />
+    <Compile Include="Windoof\Mouse.cs" />
+    <Compile Include="Other\Offsets.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Managers\Reader.cs" />
+    <Compile Include="Other\Enums.cs" />
+    <Compile Include="Other\Structs.cs" />
+    <Compile Include="Managers\ThreadManager.cs" />
+    <Compile Include="Features\Trigger.cs" />
+    <Compile Include="Windoof\WinAPI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ini-Parser\Model\IniData.cs.rej" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
